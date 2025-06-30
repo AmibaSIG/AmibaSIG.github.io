@@ -123,29 +123,29 @@
   }
   
   #titulo-mapa {
-    font-size: 20px; /* Adjust font size for mobile */
+    font-size: 10px; /* Adjust font size for mobile */
     top: 15px; /* Adjust position for better visibility */
     left: 10px; /* Adjust position for mobile */
     padding: 8px 16px; /* Adjust padding */
   }
  
   #imagem-logos {
-    width: 150px; /* Adjust logo size */
+    width: 100px; /* Adjust logo size */
     bottom: 20px; /* Move logo up for mobile */
   }
  
   #imagem-ipvc {
-    width: 100px; /* Adjust IPVC logo size */
+    width: 50px; /* Adjust IPVC logo size */
     bottom: 70px; /* Move IPVC logo up */
   }
  
   #map-legend {
-    width: 200px; /* Narrow legend on mobile */
+    width: 100px; /* Narrow legend on mobile */
     font-size: 12px; /* Smaller font */
   }
  
   #caixa-busca {
-    bottom: 15px; /* Move search box closer to the bottom */
+    bottom: 10px; /* Move search box closer to the bottom */
     width: 80%; /* Adjust search box width */
   }
  
