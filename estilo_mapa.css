@@ -117,7 +117,7 @@
 }
 
 /* Media Query for small devices like mobile */
-@media (max-width: 3000px) {
+@media (max-width: 768px) {
   #mapa {
     height: 100vh; /* Use full viewport height */
   }
