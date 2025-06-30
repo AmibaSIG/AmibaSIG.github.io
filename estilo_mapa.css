@@ -1,6 +1,6 @@
 /* comentário */
 #mapa {
-	height: 3000px;
+	height: 800px;
 	width: 100%;
 	border: 2px solid #ccc;
 }
@@ -114,4 +114,42 @@
 /* Botão de busca */
 #caixa-busca button {
   padding: 5px;
+}
+
+/* Media Query for small devices like mobile */
+@media (max-width: 768px) {
+  #mapa {
+    height: 100vh; /* Use full viewport height */
+  }
+  
+  #titulo-mapa {
+    font-size: 20px; /* Adjust font size for mobile */
+    top: 15px; /* Adjust position for better visibility */
+    left: 10px; /* Adjust position for mobile */
+    padding: 8px 16px; /* Adjust padding */
+  }
+ 
+  #imagem-logos {
+    width: 150px; /* Adjust logo size */
+    bottom: 20px; /* Move logo up for mobile */
+  }
+ 
+  #imagem-ipvc {
+    width: 100px; /* Adjust IPVC logo size */
+    bottom: 70px; /* Move IPVC logo up */
+  }
+ 
+  #map-legend {
+    width: 200px; /* Narrow legend on mobile */
+    font-size: 12px; /* Smaller font */
+  }
+ 
+  #caixa-busca {
+    bottom: 15px; /* Move search box closer to the bottom */
+    width: 80%; /* Adjust search box width */
+  }
+ 
+  #caixa-busca input[type="text"] {
+    width: 100%; /* Make input take up full width */
+  }
 }
