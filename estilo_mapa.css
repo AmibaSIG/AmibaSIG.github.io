@@ -1,15 +1,10 @@
 /* comentário */
 #mapa {
-	height: 100vh;
+	height: 800px;
 	width: 100%;
 	border: 2px solid #ccc;
 }
 
-@media (max-width: 600px) {
-  #mapa {
-    height: 70vh;
-  }
-}
 /*--------------------------------------------------------------------------------------------------------------------------------------*/
 #titulo-mapa {
   position: absolute; /* Posiciona o título dentro do mapa */
