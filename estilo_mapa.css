@@ -1,123 +1,201 @@
-/* comentário */
+/* Comentário */
+ 
+/* Mapa */
 #mapa {
-	height: 100vh;
-	width: 100%;
-	border: 2px solid #ccc;
+  height: 100vh; /* Usar 100vh para ocupar a altura total da tela */
+  width: 100%;
+  border: 2px solid #ccc;
 }
-
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
-/*--------------------------------------------------------------------------------------------------------------------------------------*/
+ 
+/* Título do Mapa */
 #titulo-mapa {
-  position: absolute; /* Posiciona o título dentro do mapa */
-  top: 25px; /* Distância do topo do mapa */
-  left: 60px; /* Distância da borda esquerda do mapa */
-  background-color: rgba(255, 255, 255, 0.9); /* Fundo branco com leve transparência */
-  padding: 10px 20px; /* Espaçamento interno maior */
-  border-radius: 8px; /* Bordas arredondadas */
-  font-size: 24px; /* Tamanho do texto */
-  font-weight: bold; /* Negrito */
-  font-family: 'Arial', sans-serif; /* Tipo de letra */
-  color: #333; /* Cor do texto */
-  border: 2px solid #ccc; /* Borda mais grossa */
-  text-align: center; /* Centraliza o texto dentro do bloco */
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5); /* Sombra para destacar */
-  z-index: 1000; /* Garante que o título fica sobre o mapa */
+  position: absolute;
+  top: 25px;
+  left: 60px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  border: 2px solid #ccc;
+  text-align: center;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
 }
-/*--------------------------------------------------------------------------------------------------------------------------------------*/
+ 
+/* Logo e Imagens */
 #imagem-logos {
-  position: absolute; /* Posiciona a imagem dentro do mapa */
-  bottom: 25px; /* Distância da parte inferior do mapa */
-  left: 20px; /* Distância da borda esquerda do mapa */
-  width: 210px; /* Largura da imagem */
-  height: auto; /* Mantém a proporção da imagem */
-  border: 2px solid #ccc; /* Borda para destacar a imagem */
-  border-radius: 7px; /* Bordas arredondadas */
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Sombra para destacar */
-  z-index: 1000; /* Garante que a imagem fica sobre o mapa */
+  position: absolute;
+  bottom: 25px;
+  left: 20px;
+  width: 210px;
+  height: auto;
+  border: 2px solid #ccc;
+  border-radius: 7px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
 }
-/*--------------------------------------------------------------------------------------------------------------------------------------*/
+ 
 #imagem-ipvc {
-  position: absolute; /* Posiciona a imagem dentro do mapa */
-  bottom: 105px; /* Distância da parte inferior do mapa */
-  left: 20px; /* Distância da borda esquerda do mapa */
-  width: 120px; /* Largura da imagem */
-  height: auto; /* Mantém a proporção da imagem */
-  border: 2px solid #ccc; /* Borda para destacar a imagem */
-  border-radius: 7px; /* Bordas arredondadas */
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Sombra para destacar */
-  z-index: 1000; /* Garante que a imagem fica sobre o mapa */
+  position: absolute;
+  bottom: 105px;
+  left: 20px;
+  width: 120px;
+  height: auto;
+  border: 2px solid #ccc;
+  border-radius: 7px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
 }
-
-/*--------------------------------------------------------------------------------------------------------------------------------------*/
-/* Legenda do mapa no canto inferior direito */
+ 
+/* Legenda do Mapa */
 #map-legend {
-  position: absolute;
-  bottom: 25px;
-  right: 25px;
-  background-color: rgba(255, 255, 255, 0.8); /* Fundo branco com leve transparência */
-  padding: 10px 15px;
-  border: 2px solid #ccc; /* Borda para destacar a imagem */
-  border-radius: 8px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  font-family: Arial, sans-serif;
-  font-size: 13px;
-  color: #333;
-  width: 250px;
-  z-index: 1100; /* acima do mapa e dos outros elementos */
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px 15px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  color: #333;
+  width: 250px;
+  z-index: 1100;
 }
-
-/* Cada item da legenda com ícone e texto alinhados */
+ 
+/* Cada item da legenda */
 #map-legend .legend-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
 }
-
+ 
 /* Remove margem do último item */
 #map-legend .legend-item:last-child {
-  margin-bottom: 0;
+  margin-bottom: 0;
 }
-
-/* Ícones com tamanho fixo e espaçamento */
+ 
+/* Ícones na legenda */
 #map-legend .legend-item img {
-  width: 24px;
-  height: 24px;
-  margin-right: 10px;
-  object-fit: contain;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  object-fit: contain;
 }
-
-/* Ajuste para o ícone azul do primeiro item (Churra) para ficar proporcional */
+ 
+/* Ajuste para o ícone azul do primeiro item */
 #map-legend .legend-item:nth-child(1) img {
-  height: 20px;
-  transform: scale(0.9);
-  transform-origin: left center;
+  height: 20px;
+  transform: scale(0.9);
+  transform-origin: left center;
 }
-/*--------------------------------------------------------------------------------------------------------------------------------------*/
-/*--------------------------------------------------------------------------------------------------------------------*/
-/* Caixa de busca no centro inferior do ecrã */
+ 
+/* Caixa de Busca */
 #caixa-busca {
-  position: absolute;
-  bottom: 25px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: white;
-  padding: 10px;
-  border-radius: 8px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  z-index: 1000;
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
 }
-
+ 
 /* Campo de texto da busca */
 #caixa-busca input[type="text"] {
-  padding: 5px;
-  width: 250px;
+  padding: 5px;
+  width: 250px;
 }
-
+ 
 /* Botão de busca */
 #caixa-busca button {
-  padding: 5px;
+  padding: 5px;
+}
+ 
+/* ---------------------------------------------------------------------------------------------- */
+ 
+/* Media Queries para Responsividade */
+ 
+/* Ajustes para dispositivos menores (max-width: 600px) */
+@media (max-width: 600px) {
+  #mapa {
+    height: 100vh; /* Garante que o mapa ocupa a altura total da tela */
+  }
+ 
+  /* Título */
+  #titulo-mapa {
+    font-size: 18px; /* Reduz o tamanho da fonte */
+    padding: 8px 12px; /* Ajusta o padding */
+    left: 10px; /* Ajusta a posição para telas pequenas */
+    right: 10px; /* Garantir que o título não saia da tela */
+  }
+ 
+  /* Logo e imagens */
+  #imagem-logos {
+    width: 150px; /* Reduz o tamanho da imagem */
+  }
+ 
+  #imagem-ipvc {
+    width: 100px; /* Reduz o tamanho da imagem */
+  }
+ 
+  /* Legenda do Mapa */
+  #map-legend {
+    width: 200px; /* Reduz a largura da legenda */
+    font-size: 12px; /* Diminui o tamanho da fonte */
+  }
+ 
+  /* Caixa de Busca */
+  #caixa-busca {
+    width: 90%; /* Faz com que a caixa de busca ocupe 90% da largura da tela */
+    left: 5%;
+  }
+ 
+  #caixa-busca input[type="text"] {
+    width: 80%; /* Ajusta o campo de texto da busca */
+  }
+ 
+  /* Ajusta os ícones na legenda */
+  #map-legend .legend-item img {
+    width: 20px; /* Ajusta o tamanho dos ícones */
+    height: 20px;
+  }
+ 
+  /* Ajuste do título e legenda em telas muito pequenas */
+  #map-legend .legend-item {
+    font-size: 12px; /* Ajusta o tamanho da fonte */
+  }
+}
+ 
+/* ---------------------------------------------------------------------------------------------- */
+ 
+/* Responsividade para telas médias (ex: tablets) */
+@media (max-width: 1024px) {
+  #mapa {
+    height: 80vh; /* Ajusta a altura para tablets */
+  }
+ 
+  /* Logo */
+  #imagem-logos {
+    width: 180px;
+  }
+ 
+  #imagem-ipvc {
+    width: 110px;
+  }
+ 
+  /* Legenda */
+  #map-legend {
+    width: 220px;
+  }
+ 
+  #caixa-busca {
+    width: 80%;
+  }
 }
