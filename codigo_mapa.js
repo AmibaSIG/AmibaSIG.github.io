@@ -745,3 +745,22 @@ function preencherDatalist() {
 preencherDatalist();
 
 //*************************************************************************************************************************************************************************************************************************
+function procurarPonto() {
+  // Restaura a altura original do mapa
+  document.getElementById('mapa').style.height = '800px';
+
+  var nomeBusca = document.getElementById('buscaNome').value.trim().toLowerCase();
+  var todosPontos = [...bordaleiraPoints, ...churraPoints];
+  
+  var pontoEncontrado = todosPontos.find(p => p.nome.toLowerCase().includes(nomeBusca));
+
+  if (pontoEncontrado) {
+    map.setView([pontoEncontrado.lat, pontoEncontrado.lng], 14);
+    L.popup()
+      .setLatLng([pontoEncontrado.lat, pontoEncontrado.lng])
+      .setContent(criarPopup(pontoEncontrado))
+      .openOn(map);
+  } else {
+    alert("Ponto não encontrado. Verifique o nome digitado.");
+  }
+}
