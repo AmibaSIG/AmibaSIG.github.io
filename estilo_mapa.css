@@ -120,7 +120,7 @@
 /*--------------------------------------------------------------------------------------------------------------------*/
 /*--------------------------------------------------------------------------------------------------------------------------------------*/
 /* Este bloco @media aplica-se apenas a ecrãs com largura até 768px (telemóveis e tablets) */
-@media (max-width: 2000px) {
+@media (max-width: 1000px) {
 
   /* Define a altura do mapa para ocupar toda a altura visível do ecrã */
   #mapa {
