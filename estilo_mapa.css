@@ -123,7 +123,7 @@
  #titulo-mapa {
     top: 15px;
     left: 10px;
-    font-size: 18px;
+    font-size: 10px;
     padding: 8px 12px;
     width: 80%;
   }
@@ -142,33 +142,33 @@
 
   #map-legend {
     width: 80%;
-    font-size: 12px;
+    font-size: 8px;
     bottom: 15px;
     right: 10px;
     padding: 8px 10px;
   }
 
   #map-legend .legend-item img {
-    width: 20px;
-    height: 20px;
+    width: 10px;
+    height: 10px;
     margin-right: 8px;
   }
 
   #caixa-busca {
-    bottom: 10px;
+    bottom: 5px;
     width: 90%;
     left: 50%;
     transform: translateX(-50%);
-    padding: 8px;
+    padding: 5px;
   }
 
   #caixa-busca input[type="text"] {
     width: 60%;
-    font-size: 14px;
+    font-size: 10px;
   }
 
   #caixa-busca button {
-    font-size: 14px;
+    font-size: 10px;
     padding: 5px 8px;
   }
 }
