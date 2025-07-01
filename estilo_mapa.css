@@ -116,59 +116,74 @@
   padding: 5px;
 }
 
+/*--------------------------------------------------------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------------------------------------------*/
+/* Este bloco @media aplica-se apenas a ecrãs com largura até 768px (telemóveis e tablets) */
 @media (max-width: 768px) {
+
+  /* Define a altura do mapa para ocupar toda a altura visível do ecrã */
   #mapa {
-    height: 100vh;
-  }
- #titulo-mapa {
-    top: 15px;
-    left: 10px;
-    font-size: 10px;
-    padding: 8px 12px;
-    width: 80%;
+    height: 100vh; /* 100% da altura da janela do ecrã */
   }
 
+  /* Estilo para o título do mapa em ecrãs pequenos */
+  #titulo-mapa {
+    top: 15px;            /* Distância do topo */
+    left: 15px;           /* Distância da esquerda */
+    font-size: 10px;      /* Tamanho do texto reduzido */
+    padding: 8px 12px;    /* Espaçamento interno (vertical horizontal) */
+    width: 80%;           /* Ocupa 80% da largura do ecrã */
+  }
+
+  /* Estilo para a imagem com logotipos (geral) */
   #imagem-logos {
-    width: 140px;
-    left: 10px;
-    bottom: 15px;
+    width: 140px;         /* Largura reduzida para telemóveis */
+    left: 10px;           /* Distância da esquerda */
+    bottom: 15px;         /* Distância do fundo */
   }
 
+  /* Estilo específico para a imagem do IPVC */
   #imagem-ipvc {
-    width: 90px;
-    left: 10px;
-    bottom: 80px;
+    width: 90px;          /* Tamanho reduzido */
+    left: 10px;           /* Posicionado à esquerda */
+    bottom: 80px;         /* Mais acima que o anterior */
   }
 
+  /* Estilo da legenda do mapa */
   #map-legend {
-    width: 80%;
-    font-size: 8px;
-    bottom: 15px;
-    right: 10px;
-    padding: 8px 10px;
+    width: 30%;           /* Ocupa 80% da largura */
+    font-size: 8px;       /* Texto pequeno */
+    bottom: 15px;         /* Posicionamento a partir do fundo */
+    right: 10px;          /* Posicionado à direita */
+    padding: 8px 10px;    /* Espaçamento interno */
   }
 
+  /* Estilo dos ícones dentro da legenda */
   #map-legend .legend-item img {
-    width: 10px;
+    width: 10px;          /* Tamanho pequeno dos ícones */
     height: 10px;
-    margin-right: 8px;
+    margin-right: 2px;    /* Espaço à direita do ícone */
   }
 
+  /* Caixa de busca (barra de pesquisa) no mapa */
   #caixa-busca {
-    bottom: 5px;
-    width: 90%;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 5px;
+    bottom: 5px;               /* Bem próxima ao fundo */
+    width: 50%;                /* Quase toda a largura do ecrã */
+    left: 50%;                 /* Centro horizontal */
+    transform: translateX(-50%); /* Centraliza corretamente */
+    padding: 5px;              /* Espaçamento interno */
   }
 
+  /* Campo de texto da barra de pesquisa */
   #caixa-busca input[type="text"] {
-    width: 60%;
-    font-size: 10px;
+    width: 40%;           /* Tamanho do input */
+    font-size: 10px;      /* Texto pequeno */
   }
 
+  /* Botão da barra de pesquisa */
   #caixa-busca button {
-    font-size: 10px;
-    padding: 5px 8px;
+    font-size: 10px;      /* Tamanho reduzido */
+    padding: 5px 8px;     /* Espaçamento interno */
   }
 }
