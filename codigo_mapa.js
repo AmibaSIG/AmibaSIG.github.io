@@ -1,6 +1,6 @@
 //comentário
 // Inicia o mapa na div com id 'mapa' e centraliza nas coordenadas específicas definidas por mim
-var map = L.map('mapa').setView([41.0, -8.0], 8);
+var map = L.map('mapa').setView([41.0, -8.0], 9);
 
 // Adiciona uma camada de mapas do OpenStreetMap (OSM)
 var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
