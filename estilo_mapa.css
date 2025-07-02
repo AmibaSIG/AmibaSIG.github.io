@@ -123,5 +123,5 @@
 
   /* Define a altura do mapa para ocupar toda a altura visível do ecrã */
   #mapa {
-    height: 85vh; /* 100% da altura da janela do ecrã */
+    height: 80vh; /* 100% da altura da janela do ecrã */
   }
