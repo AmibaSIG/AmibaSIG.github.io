@@ -747,8 +747,8 @@ preencherDatalist();
 //*************************************************************************************************************************************************************************************************************************
 function procurarPonto() {
   // Ajusta a altura do mapa com base na largura do ecrã
-  if (window.innerWidth > 1000) {
-    document.getElementById('mapa').style.height = '900px';
+  if (window.innerWidth > 900) {
+    document.getElementById('mapa').style.height = '800px';
   } else {
     document.getElementById('mapa').style.height = '100vh';
   }
