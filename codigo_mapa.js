@@ -746,8 +746,12 @@ preencherDatalist();
 
 //*************************************************************************************************************************************************************************************************************************
 function procurarPonto() {
-  // Restaura a altura original do mapa
-  document.getElementById('mapa').style.height = '800px';
+  // Ajusta a altura do mapa com base na largura do ecrã
+  if (window.innerWidth > 1000) {
+    document.getElementById('mapa').style.height = '800px';
+  } else {
+    document.getElementById('mapa').style.height = '100vh';
+  }
 
   var nomeBusca = document.getElementById('buscaNome').value.trim().toLowerCase();
   var todosPontos = [...bordaleiraPoints, ...churraPoints];
@@ -764,3 +768,5 @@ function procurarPonto() {
     alert("Ponto não encontrado. Verifique o nome digitado.");
   }
 }
+
+
