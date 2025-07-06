@@ -1,127 +1,135 @@
-/* comentário */
+/* Contêiner principal do mapa */
 #mapa {
-	height: 800px;
-	width: 100%;
-	border: 2px solid #ccc;
+	height: 800px; /* Altura fixa */
+	width: 100%; /* Largura total disponível */
+	border: 2px solid #ccc; /* Borda cinzenta clara */
 }
 /*--------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* Estilo do título do mapa */
 #titulo-mapa {
-  position: absolute; /* Posiciona o título dentro do mapa */
-  top: 25px; /* Distância do topo do mapa */
-  left: 60px; /* Distância da borda esquerda do mapa */
-  background-color: rgba(255, 255, 255, 0.9); /* Fundo branco com leve transparência */
-  padding: 10px 20px; /* Espaçamento interno maior */
+  position: absolute; /* Posiciona o título em relação ao contêiner */
+  top: 25px; /* Distância do topo do contêiner */
+  left: 60px; /* Distância da borda esquerda */
+  background-color: rgba(255, 255, 255, 0.9); /* Fundo branco com transparência leve */
+  padding: 10px 20px; /* Espaçamento interno: 10px vertical e 20px horizontal */
   border-radius: 8px; /* Bordas arredondadas */
-  font-size: 24px; /* Tamanho do texto */
-  font-weight: bold; /* Negrito */
+  font-size: 24px; /* Tamanho da fonte */
+  font-weight: bold; /* Texto em negrito */
   font-family: 'Arial', sans-serif; /* Tipo de letra */
-  color: #333; /* Cor do texto */
-  border: 2px solid #ccc; /* Borda mais grossa */
-  text-align: center; /* Centraliza o texto dentro do bloco */
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5); /* Sombra para destacar */
-  z-index: 1000; /* Garante que o título fica sobre o mapa */
+  color: #333; /* Cor do texto (cinzento escuro) */
+  border: 2px solid #ccc; /* Borda cinzenta para destacar */
+  text-align: center; /* Texto centrado dentro do elemento */
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5); /* Sombra para dar relevo */
+  z-index: 1000; /* Garante que fica acima do mapa */
 }
 /*--------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* Estilo para imagem com logos no mapa */
 #imagem-logos {
   position: absolute; /* Posiciona a imagem dentro do mapa */
-  bottom: 25px; /* Distância da parte inferior do mapa */
-  left: 20px; /* Distância da borda esquerda do mapa */
-  width: 210px; /* Largura da imagem */
-  height: auto; /* Mantém a proporção da imagem */
-  border: 2px solid #ccc; /* Borda para destacar a imagem */
+  bottom: 25px; /* Distância da parte inferior */
+  left: 20px; /* Distância da borda esquerda */
+  width: 210px; /* Largura fixa */
+  height: auto; /* Altura automática para manter proporção */
+  border: 2px solid #ccc; /* Borda cinzenta */
   border-radius: 7px; /* Bordas arredondadas */
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Sombra para destacar */
-  z-index: 1000; /* Garante que a imagem fica sobre o mapa */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Sombra leve para destaque */
+  z-index: 1000; /* Sobreposição acima do mapa */
 }
 /*--------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* Estilo para imagem IPVC */
 #imagem-ipvc {
   position: absolute; /* Posiciona a imagem dentro do mapa */
-  bottom: 105px; /* Distância da parte inferior do mapa */
-  left: 20px; /* Distância da borda esquerda do mapa */
-  width: 120px; /* Largura da imagem */
-  height: auto; /* Mantém a proporção da imagem */
-  border: 2px solid #ccc; /* Borda para destacar a imagem */
+  bottom: 105px; /* Distância da parte inferior */
+  left: 20px; /* Distância da borda esquerda */
+  width: 120px; /* Largura fixa */
+  height: auto; /* Mantém a proporção */
+  border: 2px solid #ccc; /* Borda cinzenta */
   border-radius: 7px; /* Bordas arredondadas */
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Sombra para destacar */
-  z-index: 1000; /* Garante que a imagem fica sobre o mapa */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Sombra leve */
+  z-index: 1000; /* Sobreposição acima do mapa */
 }
 
 /*--------------------------------------------------------------------------------------------------------------------------------------*/
-/* Legenda do mapa no canto inferior direito */
+
+/* Legenda do mapa posicionada no canto inferior direito */
 #map-legend {
-  position: absolute;
-  bottom: 25px;
-  right: 25px;
-  background-color: rgba(255, 255, 255, 0.8); /* Fundo branco com leve transparência */
-  padding: 10px 15px;
-  border: 2px solid #ccc; /* Borda para destacar a imagem */
-  border-radius: 8px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  font-family: Arial, sans-serif;
-  font-size: 13px;
-  color: #333;
-  width: 250px;
-  z-index: 1100; /* acima do mapa e dos outros elementos */
+  position: absolute; /* Posiciona em relação ao contêiner */
+  bottom: 25px; /* Distância inferior */
+  right: 25px; /* Distância direita */
+  background-color: rgba(255, 255, 255, 0.8); /* Fundo branco com transparência */
+  padding: 10px 15px; /* Espaçamento interno */
+  border: 2px solid #ccc; /* Borda cinzenta */
+  border-radius: 8px; /* Bordas arredondadas */
+  box-shadow: 0 0 15px rgba(0,0,0,0.2); /* Sombra suave */
+  font-family: Arial, sans-serif; /* Tipo de letra */
+  font-size: 13px; /* Tamanho do texto */
+  color: #333; /* Cor do texto */
+  width: 250px; /* Largura fixa */
+  z-index: 1100; /* Acima do mapa e de outros elementos */
 }
 
-/* Cada item da legenda com ícone e texto alinhados */
+/* Estilo para cada item da legenda: ícone e texto alinhados */
 #map-legend .legend-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 8px;
+  display: flex; /* Layout flexível */
+  align-items: center; /* Alinha verticalmente ao centro */
+  margin-bottom: 8px; /* Espaço inferior entre itens */
 }
 
-/* Remove margem do último item */
+/* Remove a margem inferior do último item da legenda */
 #map-legend .legend-item:last-child {
   margin-bottom: 0;
 }
 
-/* Ícones com tamanho fixo e espaçamento */
+/* Estilo para os ícones dentro da legenda */
 #map-legend .legend-item img {
-  width: 24px;
-  height: 24px;
-  margin-right: 10px;
-  object-fit: contain;
+  width: 24px; /* Largura fixa do ícone */
+  height: 24px; /* Altura fixa do ícone */
+  margin-right: 10px; /* Espaço entre ícone e texto */
+  object-fit: contain; /* Mantém a proporção do ícone */
 }
 
-/* Ajuste para o ícone azul do primeiro item (Churra) para ficar proporcional */
+/* Ajuste específico para o primeiro ícone da legenda (ex: Churra) */
 #map-legend .legend-item:nth-child(1) img {
-  height: 20px;
-  transform: scale(0.9);
-  transform-origin: left center;
+  height: 20px; /* Altura ligeiramente menor */
+  transform: scale(0.9); /* Reduz escala para ficar proporcional */
+  transform-origin: left center; /* Ponto de transformação */
 }
-/*--------------------------------------------------------------------------------------------------------------------------------------*/
 /*--------------------------------------------------------------------------------------------------------------------*/
-/* Caixa de busca no centro inferior do ecrã */
+
+/* Caixa de busca posicionada no centro inferior do ecrã */
 #caixa-busca {
-  position: absolute;
-  bottom: 25px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: white;
-  padding: 10px;
-  border-radius: 8px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  z-index: 1000;
+  position: absolute; /* Posiciona relativamente ao contêiner */
+  bottom: 25px; /* Distância do fundo */
+  left: 50%; /* Posiciona no centro horizontal */
+  transform: translateX(-50%); /* Centra exatamente */
+  background: white; /* Fundo branco */
+  padding: 10px; /* Espaçamento interno */
+  border-radius: 8px; /* Bordas arredondadas */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Sombra leve */
+  z-index: 1000; /* Sobreposição acima do mapa */
 }
 
-/* Campo de texto da busca */
+/* Campo de texto dentro da caixa de busca */
 #caixa-busca input[type="text"] {
-  padding: 5px;
-  width: 250px;
+  padding: 5px; /* Espaçamento interno */
+  width: 250px; /* Largura fixa */
 }
 
-/* Botão de busca */
+/* Botão dentro da caixa de busca */
 #caixa-busca button {
-  padding: 5px;
+  padding: 5px; /* Espaçamento interno */
 }
 
 /*--------------------------------------------------------------------------------------------------------------------------------------*/
-/*--------------------------------------------------------------------------------------------------------------------*/
-/*--------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* Regras para ecrãs */
 @media (max-width: 1000px) {
 
-  /* Define a altura do mapa para ocupar toda a altura visível do ecrã */
+  /* Ajusta a altura do mapa para ocupar 80% da altura da janela */
   #mapa {
-    height: 80vh; /* 100% da altura da janela do ecrã */
+    height: 80vh; 
   }
+}

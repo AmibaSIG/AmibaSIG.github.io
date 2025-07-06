@@ -1,60 +1,61 @@
-//comentário
-// Inicia o mapa na div com id 'mapa' e centraliza nas coordenadas específicas definidas por mim
+// Inicializa o mapa na div com id 'mapa' e define o centro nas coordenadas (latitude, longitude) e zoom inicial
 var map = L.map('mapa').setView([41.0, -8.0], 8);
 
-// Adiciona uma camada de mapas do OpenStreetMap (OSM)
+// Adiciona a camada base do OpenStreetMap (mapa normal) com a respetiva atribuição de direitos
 var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 });
-osm.addTo(map);  // Define esta camada como a padrão visível no início
+osm.addTo(map);  // Torna esta camada visível inicialmente
 
-// Adiciona uma camada de satélite do Google Maps, que mostra imagens de satélite
+// Camada de imagens de satélite do Google Maps (não adicionada ao mapa inicialmente)
 var googleSat = L.tileLayer('http://www.google.cn/maps/vt?lyrs=s@189&gl=cn&x={x}&y={y}&z={z}');
 
-// Adiciona a camada "Esri World Imagery", que é uma camada de imagens de satélite fornecida pela Esri
+// Camada de imagens de satélite da Esri, alternativa à do Google
 var esriWorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
 	attribution: '&copy; <a href="https://www.esri.com/">Esri</a>' 
 });
 
-// Cria um objeto contendo os basemap disponíveis, permitindo alternar conforme escolha do utilizador
+// Objeto que agrupa todas as camadas base para que o utilizador possa alternar entre elas
 var baseMaps = {
 	"OpenStreetMap": osm, 
 	"Google Satellite": googleSat, 
 	"Esri World Imagery": esriWorldImagery, 
 };
 
-// Adiciona um controlo ao mapa que permite alternar os basemaps
+// Adiciona ao mapa o controlo para alternar entre as camadas base disponíveis
 var layerControl = L.control.layers(baseMaps).addTo(map);
 
 
 //*************************************************************************************************************************************************************************************************************************
-// Icones coloridos personalizados
+
+// Definição de ícones personalizados para os marcadores, com URL, tamanho e ponto de ancoragem
 var bordaleiraIcon = L.icon({
-  iconUrl: 'https://cdn-icons-png.flaticon.com/512/17207/17207630.png',
-  iconSize: [32, 32],
-  iconAnchor: [16, 32],
-  popupAnchor: [0, -32]
+  iconUrl: 'https://cdn-icons-png.flaticon.com/512/17207/17207630.png', // Ícone da raça Bordaleira
+  iconSize: [32, 32], // Tamanho do ícone em pixels
+  iconAnchor: [16, 32], // Ponto do ícone que corresponde à posição no mapa (a ponta inferior)
+  popupAnchor: [0, -32] // Posição do popup em relação ao ícone
 });
 
 var churraIcon = L.icon({
-  iconUrl: 'https://static.vecteezy.com/system/resources/previews/009/589/758/non_2x/location-location-pin-location-icon-transparent-free-png.png',
-  iconSize: [45, 45],
-  iconAnchor: [16, 32],
-  popupAnchor: [0, -32]
+  iconUrl: 'https://static.vecteezy.com/system/resources/previews/009/589/758/non_2x/location-location-pin-location-icon-transparent-free-png.png', // Ícone da raça Churra
+  iconSize: [45, 45], // Tamanho do ícone
+  iconAnchor: [16, 32], // Ponto de ancoragem
+  popupAnchor: [0, -32] // Popup acima do ícone
 });
 
 //*************************************************************************************************************************************************************************************************************************
-// Pontos para raça Bordaleira de Entre Douro e Minho (AZUL)
+
+// Lista de pontos para a raça Bordaleira de Entre Douro e Minho (ícones azuis no mapa)
 var bordaleiraPoints = [
   {
-    nome: "José Manuel Gonçalves Carvalho",
-    morada: "Politeiro, Nº 977",
-    codigoPostal: "4850-303",
-    telefone: "253656333",
-    telemovel: "963173722",
-    direcoes: "https://www.google.com/maps?q=41.58066,-8.10699",
-    lat: 41.58066,
-    lng: -8.10699
+    nome: "José Manuel Gonçalves Carvalho", // Nome do criador
+    morada: "Politeiro, Nº 977", // Morada da exploração
+    codigoPostal: "4850-303", // Código postal
+    telefone: "253656333", // Telefone fixo
+    telemovel: "963173722", // Telemóvel
+    direcoes: "https://www.google.com/maps?q=41.58066,-8.10699", // Link para direções no Google Maps
+    lat: 41.58066, // Latitude
+    lng: -8.10699  // Longitude
   },
   {
     nome: "José Manuel Gonçalves Carvalho 2 ",
@@ -684,66 +685,87 @@ var churraPoints = [
 ];
 
 //*************************************************************************************************************************************************************************************************************************
-// Função para criar conteúdo da popup
+
+// Função que cria o conteúdo HTML da popup para mostrar informação do ponto
 function criarPopup(ponto) {
+  // Retorna um template string com o conteúdo HTML formatado com os dados do ponto
   return ` 
-	<b>Nome:</b>${ponto.nome}<br>
-    <b>Morada:</b> ${ponto.morada}<br>
-    <b>Código Postal:</b> ${ponto.codigoPostal}<br>
-    <b>Telefone:</b> ${ponto.telefone}<br>
-    <b>Telemóvel:</b> ${ponto.telemovel}<br>
+	<b>Nome:</b> ${ponto.nome}<br>                
+    <b>Morada:</b> ${ponto.morada}<br>            
+    <b>Código Postal:</b> ${ponto.codigoPostal}<br> 
+    <b>Telefone:</b> ${ponto.telefone}<br>        
+    <b>Telemóvel:</b> ${ponto.telemovel}<br>      
     <b>Direções:</b> <a href="${ponto.direcoes}" target="_blank">Ver no Google Maps</a>
   `;
 }
 
-// Adiciona marcadores Bordaleira com ícone azul
+// Para cada ponto da raça Bordaleira, executa esta função
 bordaleiraPoints.forEach(function(ponto) {
+  // Cria um marcador no mapa nas coordenadas do ponto e usa o ícone azul da Bordaleira
   L.marker([ponto.lat, ponto.lng], {icon: bordaleiraIcon})
-    .addTo(map)
-    .bindPopup(criarPopup(ponto));
+    .addTo(map)                 // Adiciona o marcador ao mapa
+    .bindPopup(criarPopup(ponto)); // Liga a popup com o conteúdo criado pela função criarPopup
 });
 
-// Adiciona marcadores Churra com ícone vermelho
+// Para cada ponto da raça Churra, executa esta função
 churraPoints.forEach(function(ponto) {
+  // Cria um marcador no mapa nas coordenadas do ponto e usa o ícone vermelho da Churra
   L.marker([ponto.lat, ponto.lng], {icon: churraIcon})
-    .addTo(map)
-    .bindPopup(criarPopup(ponto));
+    .addTo(map)                  // Adiciona o marcador ao mapa
+    .bindPopup(criarPopup(ponto)); // Liga a popup com o conteúdo criado pela função criarPopup
 });
 
 //*************************************************************************************************************************************************************************************************************************
 
+// Função que procura um ponto no mapa com base no texto da caixa de busca
 function procurarPonto() {
+  // Pega o valor da caixa de texto com id 'buscaNome', tira espaços extra e converte para minúsculas
   var nomeBusca = document.getElementById('buscaNome').value.trim().toLowerCase();
+
+  // Junta todos os pontos das duas raças num só array
   var todosPontos = [...bordaleiraPoints, ...churraPoints];
   
+  // Procura o primeiro ponto cujo nome contenha o texto procurado (ignore maiúsculas/minúsculas)
   var pontoEncontrado = todosPontos.find(p => p.nome.toLowerCase().includes(nomeBusca));
 
+  // Se encontrar um ponto que coincida
   if (pontoEncontrado) {
-    map.setView([pontoEncontrado.lat, pontoEncontrado.lng], 14); // Ajuste o nível de zoom se quiser
+    // Move o mapa para as coordenadas do ponto encontrado e faz zoom para 14
+    map.setView([pontoEncontrado.lat, pontoEncontrado.lng], 14);
+
+    // Cria um popup na posição do ponto e mostra as informações do ponto
     L.popup()
-      .setLatLng([pontoEncontrado.lat, pontoEncontrado.lng])
-      .setContent(criarPopup(pontoEncontrado))
-      .openOn(map);
+      .setLatLng([pontoEncontrado.lat, pontoEncontrado.lng])  // Define a posição do popup
+      .setContent(criarPopup(pontoEncontrado))                // Define o conteúdo do popup
+      .openOn(map);                                           // Abre o popup no mapa
   } else {
+    // Caso não encontre nenhum ponto com esse nome, mostra uma mensagem de alerta
     alert("Ponto não encontrado. Verifique o nome digitado.");
   }
 }
 
-// Preenche o datalist com sugestões de nomes das explorações
+// Função que preenche a lista de sugestões (datalist) para a caixa de busca
 function preencherDatalist() {
+  // Obtém o elemento datalist com id 'nomesExploracoes'
   const datalist = document.getElementById('nomesExploracoes');
+
+  // Junta todos os pontos das duas raças num array
   const todosPontos = [...bordaleiraPoints, ...churraPoints];
 
+  // Para cada ponto na lista de pontos
   todosPontos.forEach(ponto => {
+    // Cria um novo elemento option para o datalist
     const option = document.createElement('option');
+
+    // Define o valor da option como o nome do ponto (criador)
     option.value = ponto.nome;
+
+    // Adiciona a option ao datalist para aparecer nas sugestões
     datalist.appendChild(option);
   });
 }
 
-// Executa a função ao carregar a página
+// Executa a função preencherDatalist assim que o script é carregado para preencher as sugestões
 preencherDatalist();
 
 //*************************************************************************************************************************************************************************************************************************
-
-

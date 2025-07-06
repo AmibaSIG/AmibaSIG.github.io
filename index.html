@@ -1,43 +1,65 @@
 <!DOCTYPE html>
 <html lang="pt-pt">
 <head>
-	<meta charset="UTF-8">
-	<title>Localização de Explorações</title>
+	<meta charset="UTF-8"> <!-- Define a codificação de caracteres como UTF-8 -->
+	<title>Localização de Explorações</title> <!-- Título da página mostrado na aba do browser -->
+
+	<!-- Folha de estilos do Leaflet para o mapa -->
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+	<!-- Script principal do Leaflet para criação de mapas interativos -->
 	<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+	<!-- Estilos e script para legendas WMS no Leaflet -->
 	<link rel="stylesheet" href="leaflet.wmslegend.css"/>
 	<script src="leaflet.wmslegend.js"></script>
+
+	<!-- Folha de estilos personalizada para o mapa -->
 	<link rel="stylesheet" href="estilo_mapa.css">
 </head>
 <body>
+	<!-- Div onde o mapa Leaflet será renderizado -->
 	<div id="mapa"></div>
 	
+	<!-- Legenda do mapa com ícones e nomes das raças -->
 	<div id="map-legend">
 		<div class="legend-item">
+			<!-- Ícone da Bordaleira -->
 			<img src="https://cdn-icons-png.flaticon.com/512/17207/17207630.png" alt="Bordaleira Icon">
+			<!-- Nome da raça associada -->
 			<span>Bordaleira de Entre Douro e Minho</span>
 		</div>
 		<div class="legend-item">
+			<!-- Ícone da Churra -->
 			<img src="https://static.vecteezy.com/system/resources/previews/009/589/758/non_2x/location-location-pin-location-icon-transparent-free-png.png" alt="Churra Icon">
+			<!-- Nome da raça associada -->
 			<span>Churra do Minho</span>
 		</div>
 	</div>
 
+	<!-- Título do mapa, posicionado sobre o próprio mapa -->
 	<div id="titulo-mapa">Mapa da Distribuição Geográfica das Explorações</div>
 
+	<!-- Contêiner para as imagens de logos e do IPVC -->
 	<div id="container-imagens">
+		<!-- Link para o site do IPVC com a respetiva imagem -->
 		<a href="https://www.ipvc.pt/esa/" target="_blank">
 			<img id="imagem-ipvc" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSisL7DNC3Ovs-NQnU8TIuapW-XR3DAyi6_bA&s" alt="Imagem do mapa">
 		</a>
+		<!-- Imagem com logos -->
 		<img id="imagem-logos" src="logos.jpg" alt="logos">
 	</div>
 
+	<!-- Caixa para procurar criador por nome -->
 	<div id="caixa-busca">
+		<!-- Campo de texto com lista de sugestões preenchida dinamicamente -->
 		<input type="text" id="buscaNome" list="nomesExploracoes" placeholder="Digite o nome do criador">
+		<!-- Lista de sugestões para o campo de texto -->
 		<datalist id="nomesExploracoes"></datalist>
+		<!-- Botão que ao clicar executa a função procurarPonto() definida no JS -->
 		<button onclick="procurarPonto()">Procurar</button>
 	</div>
 
+	<!-- Script JavaScript que contém a lógica do mapa e das funcionalidades -->
 	<script src="codigo_mapa.js"></script>
 </body>
 </html>
