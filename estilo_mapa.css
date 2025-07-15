@@ -131,12 +131,6 @@
   #mapa {
     height: 80vh;
   }
-
-  /* Aumenta o popup do Leaflet no telemóvel */
-  .leaflet-popup {
-    transform: scale(2);
-    transform-origin: center center;
-  }
 }
 
 /*--------------------------------------------------------------------------------------------------------------------------------------*/
