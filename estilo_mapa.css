@@ -130,6 +130,13 @@
 
   /* Ajusta a altura do mapa para ocupar 80% da altura da janela */
   #mapa {
-    height: 80vh; 
+    height: 80vh;  
+	/* Aumenta o popup do Leaflet em 30% no telemóvel */
+  .leaflet-popup
+    transform: scale(1.3);
+    transform-origin: center center;
   }
 }
+
+/*--------------------------------------------------------------------------------------------------------------------------------------*/
+
